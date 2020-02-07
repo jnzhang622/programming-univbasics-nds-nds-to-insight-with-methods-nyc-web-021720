@@ -4,7 +4,12 @@ require 'directors_database'
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
 def gross_for_director(director_data)
-
+  while gross_index < nds[director_index][:movies].size do
+    gross = 0
+    gross += nds[director_index][:movies][gross_index][:worldwide_gross]
+    gross_index += 1
+    end
+  return gross
 end
 
 # Write a method that, given an NDS creates a new Hash
@@ -16,9 +21,9 @@ def directors_totals(nds)
   director_index = 0
 		while director_index < nds.size do
 			gross_index = 0
-      gross = 0
+      
       while gross_index < nds[director_index][:movies].size do
-        gross += nds[director_index][:movies][gross_index][:worldwide_gross]
+        
         gross_index += 1
 			end
       result.store(nds[director_index][:name], gross)
