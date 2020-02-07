@@ -24,9 +24,5 @@ def directors_totals(nds)
 			director_index += 1
 		end
 		return result
-      result.store([director_index][:name], gross)
-			director_index += 1
-		end
-		puts result
   nil
 end
